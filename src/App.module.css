@@ -1,0 +1,15 @@
+.App{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.App .Card {
+    width: 600px;
+    height: auto;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+}
