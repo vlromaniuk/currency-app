@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import 'materialize-css/dist/css/materialize.css';
-import M from 'materialize-css/dist/js/materialize.min.js'
 
 class CurrencyInput extends Component {
     state = {
@@ -8,7 +7,6 @@ class CurrencyInput extends Component {
     };
 
     componentDidMount(){
-        M.AutoInit();
 
         fetch(
             `https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5`
@@ -25,8 +23,8 @@ class CurrencyInput extends Component {
         const currency = this.state.items.map((value, key) =>
             <tr key={key}>
                 <td>{value.ccy}</td>
-                <td>{value.buy}</td>
-                <td>{value.sale}</td>
+                <td>{parseFloat(value.buy).toFixed(2)}</td>
+                <td>{parseFloat(value.sale).toFixed(2)}</td>
             </tr>
         );
 
